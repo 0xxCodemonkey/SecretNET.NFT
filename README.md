@@ -21,6 +21,9 @@ The structure of SecretNET.SNIP721 is the same as the SecretNET client and trans
 
 All transactions can also be simulated via ```Tx.Simulate```.
 
+**All types and methods are documented and eases programming:**
+
+![](resources/VS_IntelliSense.png)
 ## Instantiating a SNIP721 Client
 To instantiate a SecretNET.SNIP20 client you just have to pass it a SecretNET client instance:
 ```  csharp
