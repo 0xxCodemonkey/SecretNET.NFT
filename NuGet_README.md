@@ -1,5 +1,5 @@
-# SecretNET.SNIP721 / Secret NFT
-**SecretNET.SNIP721** is a layer on top of the [**SecretNET client**](https://github.com/0xxCodemonkey/SecretNET) (for the Secret Network Blockchain) which supports all methods of the reference implementation of the SNIP721 contract:
+# Secret.NET SNIP721 / Secret NFT
+**Secret.NET SNIP721** is a layer on top of the [**SecretNET client**](https://github.com/0xxCodemonkey/SecretNET) (for the Secret Network Blockchain) which supports all methods of the reference implementation of the SNIP721 contract:
 - Implementation => [GitHub - baedrik/snip721-reference-impl](https://github.com/baedrik/snip721-reference-impl) 
 - Implementation of the [SNIP-721 specification](https://github.com/SecretFoundation/SNIPs/blob/master/SNIP-721.md) and [SNIP-722 specification](https://github.com/baedrik/snip-722-spec/blob/master/SNIP-722.md).
 - See also the [SNIP721 documentation on Secret Network](https://docs.scrt.network/secret-network-documentation/development/snips/snip-721-private-non-fungible-tokens-nfts).
