@@ -5,7 +5,7 @@ public class TransferNftRequest
     /// <summary>
     /// Payload of the request.
     /// </summary>
-    [JsonProperty("transfer_nft")]
+    [JsonProperty("transfer")]
     public TransferNftRequest_Payload Payload { get; set; }
 
     /// <summary>
