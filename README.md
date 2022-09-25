@@ -1,5 +1,5 @@
-# Secret.NET SNIP721 / Secret NFT
-**Secret.NET SNIP721** is a layer on top of the [**Secret.NET client**](https://github.com/0xxCodemonkey/SecretNET) which supports all methods of the reference implementation of the SNIP721 contract:
+# Secret.NET NFT (SNIP721) / Secret NFT
+**Secret.NET NFT** is a layer on top of the [**Secret.NET client**](https://github.com/0xxCodemonkey/SecretNET) which supports all methods of the reference implementation of the SNIP721 contract:
 - Implementation => [GitHub - baedrik/snip721-reference-impl](https://github.com/baedrik/snip721-reference-impl) 
 - Implementation of the [SNIP-721 specification](https://github.com/SecretFoundation/SNIPs/blob/master/SNIP-721.md) and [SNIP-722 specification](https://github.com/baedrik/snip-722-spec/blob/master/SNIP-722.md).
 - See also the [SNIP721 documentation on Secret Network](https://docs.scrt.network/secret-network-documentation/development/snips/snip-721-private-non-fungible-tokens-nfts).
@@ -12,7 +12,7 @@ This makes it easy to create your own customized clients for your own customized
 Of course, the concept can be used for any kind of smart contracts in general.
 
 ## Full API-documentation
-You can find the **full API-documentation** here => https://0xxcodemonkey.github.io/SecretNET.SNIP721
+You can find the **full API-documentation** here => https://0xxcodemonkey.github.io/SecretNET.NFT
 
 # Table of Contents
 - [Table of Contents](#table-of-contents)
@@ -24,7 +24,7 @@ You can find the **full API-documentation** here => https://0xxcodemonkey.github
   - [Transactions](#transactions)
 
 # Implementation
-The structure of SecretNET.SNIP721 is the same as the SecretNET client and transactions are accessible via ```Tx``` property and queries via ```Query``` property.
+The structure of SecretNET.NFT is the same as the SecretNET client and transactions are accessible via ```Tx``` property and queries via ```Query``` property.
 
 All transactions can also be simulated via ```Tx.Simulate```.
 
@@ -34,17 +34,17 @@ All transactions can also be simulated via ```Tx.Simulate```.
 ## Instantiating a SNIP721 Client
 To instantiate a SecretNET.SNIP20 client you just have to pass it a SecretNET client instance:
 ```  csharp
-var snip721Client =  new SecretNET.SNIP721.Snip721Client(secretNetworkClient);
+var snip721Client =  new SecretNET.NFT.Snip721Client(secretNetworkClient);
 ```
 
 ## Usage
 All Methods can be easily called with the payload message like this:
 ```  csharp
-var payloadTransferMsg = new SecretNET.SNIP721.TransferNftRequest(
+var payloadTransferMsg = new SecretNET.NFT.TransferNftRequest(
               recipientAddress,
               tokenId);
               
-var transferMsg = new SecretNET.SNIP721.MsgTransferNft(
+var transferMsg = new SecretNET.NFT.MsgTransferNft(
                 payloadTransferMsg, 
                 snip721ContractAddress, 
                 snip721CodeHash);

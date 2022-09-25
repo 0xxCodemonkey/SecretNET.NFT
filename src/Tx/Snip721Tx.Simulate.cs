@@ -1,7 +1,7 @@
 ﻿using SecretNET.AccessControl;
 using SecretNET.Tx;
 
-namespace SecretNET.SNIP721;
+namespace SecretNET.NFT;
 
 public class Snip721TxSimulate
 {

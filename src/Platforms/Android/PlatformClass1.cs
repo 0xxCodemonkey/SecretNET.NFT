@@ -1,4 +1,4 @@
-﻿namespace SecretNET.SNIP721
+﻿namespace SecretNET.NFT
 {
     // All the code in this file is only included on Android.
     public class PlatformClass1

@@ -1,7 +1,7 @@
 ﻿using SecretNET.AccessControl;
 using SecretNET.Query;
 
-namespace SecretNET.SNIP721;
+namespace SecretNET.NFT;
 
 /// <summary>
 /// Class Snip721Querier.
