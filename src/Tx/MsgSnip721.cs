@@ -1,7 +1,7 @@
 ﻿using SecretNET.Tx;
 using SecretNET.AccessControl;
 
-namespace SecretNET.SNIP721;
+namespace SecretNET.NFT;
 
 public class MsgInstantiate : MsgInstantiateContract
 {

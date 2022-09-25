@@ -1,4 +1,4 @@
-﻿namespace SecretNET.SNIP721;
+﻿namespace SecretNET.NFT;
 
 /// <summary>
 /// Client for SNIP721 reference contract (https://github.com/baedrik/snip721-reference-impl at 2022-08-01).

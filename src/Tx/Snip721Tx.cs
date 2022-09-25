@@ -1,7 +1,7 @@
 ﻿using SecretNET.AccessControl;
 using SecretNET.Tx;
 
-namespace SecretNET.SNIP721;
+namespace SecretNET.NFT;
 
 /// <summary>
 /// Client for SNIP20 reference contract (https://github.com/baedrik/snip721-reference-impl at 2022-08-01).
@@ -34,7 +34,7 @@ public class Snip721Tx
     /// <param name="msg"></param>
     /// <param name="txOptions"></param>
     /// <returns></returns>
-    public async Task<InstantiateContractSecretTx> Instantiate(MsgInstantiate msg, TxOptions? txOptions = null)
+    public async Task<SingleSecretTx<Secret.Compute.V1Beta1.MsgInstantiateContractResponse>> Instantiate(MsgInstantiate msg, TxOptions? txOptions = null)
     {
         return await _tx.Compute.InstantiateContract(msg, txOptions);
     }

@@ -1,4 +1,4 @@
-﻿namespace SecretNET.SNIP721;
+﻿namespace SecretNET.NFT;
 
 public class GetTokenApprovalsRequest
 {
