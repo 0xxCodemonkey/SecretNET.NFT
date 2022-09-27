@@ -38,7 +38,7 @@ All transactions can also be simulated via ```Tx.Simulate```.
 
 ![](resources/VS_IntelliSense.png)
 ## Instantiating a SNIP721 Client
-To instantiate a SecretNET.SNIP20 client you just have to pass it a [SecretNET client instance](https://github.com/0xxCodemonkey/SecretNET#usage-examples):
+To instantiate a **SecretNET.SNIP721** client you just have to pass it a [SecretNET client instance](https://github.com/0xxCodemonkey/SecretNET#usage-examples):
 ```  csharp
 var snip721Client =  new SecretNET.NFT.Snip721Client(secretNetworkClient);
 ```
