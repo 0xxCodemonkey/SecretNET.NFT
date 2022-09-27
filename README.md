@@ -8,7 +8,7 @@ This allows [unique use cases](https://docs.scrt.network/secret-network-document
   <img src="./resources/Secret.NET_banner.png" type="image/png" width="100%" />
 </p>
 
-SecretNET.NFT provides typed and documented objects and methods that simplify interaction with a SNIP721 smart contract.
+**SecretNET.NFT** provides typed and documented objects and methods that simplify interaction with a SNIP721 smart contract.
 
 - Implementation => [GitHub - baedrik/snip721-reference-impl](https://github.com/baedrik/snip721-reference-impl) 
 - Implementation of the [SNIP-721 specification](https://github.com/SecretFoundation/SNIPs/blob/master/SNIP-721.md) and [SNIP-722 specification](https://github.com/baedrik/snip-722-spec/blob/master/SNIP-722.md).
@@ -30,9 +30,9 @@ You can find the **full API-documentation** here => https://0xxcodemonkey.github
   - [Transactions](#transactions-snip721clienttx)
 
 # Implementation
-The structure of SecretNET.NFT is the same as the SecretNET client and transactions are accessible via `Tx` property and queries via `Query` property.
+The structure of **SecretNET.NFT** is the same as the **SecretNET** client and transactions are accessible via `Tx` property and queries via `Query` property.
 
-All transactions can also be simulated via ```Tx.Simulate```.
+All transactions can also be simulated via `Tx.Simulate`.
 
 **All types and methods are documented and eases programming:**
 
