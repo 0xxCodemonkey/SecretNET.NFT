@@ -378,108 +378,179 @@ GetVerifyTransferApproval(
 ```
 
 ## Transactions (`Snip721Client.Tx`)
-### AddMinter
-
+### [AddMinter](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.AddMinter.htm)
+AddMinters will add the provided addresses to the list of authorized minters. This can only be called by the admin address.
 ``` csharp
-
+AddMinter(
+	MsgAddMinter msg,
+	Nullable<TxOptions> txOptions
+);
 ```
-### Approve
-
+### [Approve](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.Approve.htm)
+Approve is used to grant an address permission to transfer a single token. This can only be performed by the token's owner or, in compliance with CW-721, an address that has inventory-wide approval to transfer the owner's tokens. Approve is provided to maintain compliance with CW-721, but the owner can use SetWhitelistedApproval to accomplish the same thing if specifying a token_id and approve_token AccessLevel for transfer.
 ``` csharp
-
+Approve(
+	MsgApprove msg,
+	Nullable<TxOptions> txOptions
+);
 ```
-### ApproveAll
-
+### [ApproveAll](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.ApproveAll.htm)
+ApproveAll is used to grant an address permission to transfer all the tokens in the message sender's inventory. This will include the ability to transfer any tokens the sender acquires after granting this inventory-wide approval. This also gives the address the ability to grant another address the approval to transfer a single token. ApproveAll is provided to maintain compliance with CW-721, but the message sender can use SetWhitelistedApproval to accomplish the same thing by using all AccessLevel for transfer.
 ``` csharp
-
+ApproveAll(
+	MsgApproveAll msg,
+	Nullable<TxOptions> txOptions
+);
 ```
-### BatchBurnNft
-
+### [BatchBurnNft](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.BatchBurnNft.htm)
+BatchBurnNft is used to burn multiple tokens. The message sender may specify a list of tokens to burn in each Burn object, and any memo provided will be applied to every token burned in that one Burn object. The message sender will usually list every token to be burned in one Burn object, but if a different memo is needed for different tokens being burned, multiple Burn objects may be listed. Each individual burning of a token will show separately in transaction histories. The message sender must have permission to transfer/burn all the tokens listed (either by being the owner or being granted transfer approval). A contract may use the VerifyTransferApproval query to verify that it has permission to transfer/burn all the tokens. If the message sender does not have permission to transfer/burn any one of the listed tokens, the entire message will fail (no tokens will be burned) and the error will provide the ID of the first token encountered in which the sender does not have the required permission. A SNIP-722 non-transferable token can always be burned even if burn functionality has been disabled using the init configuration. This is because an owner should always be able to dispose of an unwanted, non-transferable token.
 ``` csharp
-
+BatchBurnNft(
+	MsgBatchBurnNft msg,
+	Nullable<TxOptions> txOptions
+);
 ```
-### BatchMintNft
-
+### [BatchMintNft](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.BatchMintNft.htm)
+BatchMintNft mints a list of tokens. Only an authorized minting address my execute BatchMintNft. SNIP-722 adds the ability to optionally mint non-transferable tokens, which are NFTs that can never have a different owner than the address it was minted to.
 ``` csharp
-
+BatchMintNft(
+	MsgBatchMintNft msg,
+	Nullable<TxOptions> txOptions
+);
 ```
-### BatchSendNft
-
+### [BatchSendNft](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.BatchSendNft.htm)
+BatchSendNft is used to perform multiple token transfers, and then call the recipient contracts' BatchReceiveNft (or ReceiveNft) if they have registered their receiver interface with the NFT contract or if their ReceiverInfo is provided. The message sender may specify a list of tokens to send to one recipient address in each Send object, and any memo or msg provided will be applied to every token transferred in that one Send object. If the list of transferred tokens belonged to multiple previous owners, a separate BatchReceiveNft callback will be performed for each of the previous owners. If the contract only implements ReceiveNft, one ReceiveNft will be performed for every sent token. Therefore it is highly recommended to implement BatchReceiveNft if there is the possibility of being sent multiple tokens at one time. This will significantly reduce gas costs. The message sender may provide multiple Send objects to perform sends to multiple addresses, providing a different memo and msg for each address if desired. Each individual transfer of a token will show separately in transaction histories. The message sender must have permission to transfer all the tokens listed (either by being the owner or being granted transfer approval) and every token ID must be valid. A contract may use the VerifyTransferApproval query to verify that it has permission to transfer all the tokens. If the message sender does not have permission to transfer any one of the listed tokens, the entire message will fail (no tokens will be transferred) and the error will provide the ID of the first token encountered in which the sender does not have the required permission. If any token transfer involves a recipient address that is the same as its current owner, the contract will throw an error. Any token that is transferred to a new owner will have its single-token approvals cleared.If any BatchReceiveNft(or ReceiveNft) callback fails, the entire transaction will be reverted (even the transfers will not take place). This implementation will throw an error if trying to send a SNIP-722 non-transferable token.
 ``` csharp
-
+BatchSendNft(
+	MsgBatchSendNft msg,
+	Nullable<TxOptions> txOptions
+);
 ```
-### BatchTransferNft
-
+### [BatchTransferNft](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.BatchTransferNft.htm)
+BatchTransferNft is used to perform multiple token transfers. The message sender may specify a list of tokens to transfer to one recipient address in each Transfer object, and any memo provided will be applied to every token transferred in that one Transfer object. The message sender may provide multiple Transfer objects to perform transfers to multiple addresses, providing a different memo for each address if desired. Each individual transfer of a token will show separately in transaction histories. The message sender must have permission to transfer all the tokens listed (either by being the owner or being granted transfer approval) and every listed token_id must be valid. A contract may use the VerifyTransferApproval query to verify that it has permission to transfer all the tokens. If the message sender does not have permission to transfer any one of the listed tokens, the entire message will fail(no tokens will be transferred) and the error will provide the ID of the first token encountered in which the sender does not have the required permission. If any token transfer involves a recipient address that is the same as its current owner, the contract will throw an error. Any token that is transferred to a new owner will have its single-token approvals cleared. This implementation will throw an error if trying to transfer a SNIP-722 non-transferable token.
 ``` csharp
-
+BatchTransferNft(
+	MsgBatchTransferNft msg,
+	Nullable<TxOptions> txOptions
+);
 ```
-### BurnNft
-
+### [BurnNft](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.BurnNft.htm)
+BurnNft is used to burn a single token, providing an optional memo to include in the burn's transaction history if desired. If the contract has not enabled burn functionality using the init configuration enable_burn, BurnNft will result in an error, unless the token being burned is a SNIP-722 non-transferable token. This is because an owner should always be able to dispose of an unwanted, non-transferable token. Only the token owner and anyone else with valid transfer approval may burn this token.
 ``` csharp
-
+BurnNft(
+	MsgBurnNft msg,
+	Nullable<TxOptions> txOptions
+);
 ```
-### ChangeAdmin
-
+### [ChangeAdmin](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.ChangeAdmin.htm)
+ChangeAdmin will allow the current admin to transfer admin privileges to another address (which will be the only admin address). This can only be called by the current admin address.
 ``` csharp
-
+ChangeAdmin(
+	MsgChangeAdmin msg,
+	Nullable<TxOptions> txOptions
+);
 ```
-### CreateViewingKey
-
+### [CreateViewingKey](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.CreateViewingKey.htm)
+CreateViewingKey is used to generate a random viewing key to be used to authenticate account-specific queries. The entropy field is a client-supplied string used as part of the entropy supplied to the rng that creates the viewing key.
 ``` csharp
-
+CreateViewingKey(
+	MsgCreateViewingKey msg,
+	Nullable<TxOptions> txOptions
+);
 ```
-### Instantiate (new contract)
-
+### [Instantiate (new contract)](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.Instantiate.htm)
+Instantiates / configures the NFT contract (https://github.com/baedrik/snip721-reference-impl at 2022-07-11).
 ``` csharp
-
+Instantiate(
+	MsgInstantiate msg,
+	Nullable<TxOptions> txOptions
+);
 ```
-### MakeOwnershipPrivate
-
+### [MakeOwnershipPrivate](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.MakeOwnershipPrivate.htm)
+MakeOwnershipPrivate is used when the token contract was instantiated with the public_owner configuration value set to true. It allows an address to make all of its tokens have private ownership by default. The owner may still use SetGlobalApproval or SetWhitelistedApproval to make ownership public as desired.
 ``` csharp
-
+MakeOwnershipPrivate(
+	MsgMakeOwnershipPrivate msg,
+	Nullable<TxOptions> txOptions
+);
 ```
-### MintNft
-
+### [MintNft](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.MintNft.htm)
+MintNft mints a single token. Only an authorized minting address my execute MintNft. SNIP-722 adds the ability to optionally mint non-transferable tokens, which are NFTs that can never have a different owner than the address it was minted to.
 ``` csharp
-
+MintNft(
+	MsgMintNft msg,
+	Nullable<TxOptions> txOptions
+);
 ```
-### MintNftClones
-
+### [MintNftClones](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.MintNftClones.htm)
+MintNftClones mints copies of an NFT, giving each one a MintRunInfo that indicates its serial number and the number of identical NFTs minted with it. If the optional mint_run_id is provided, the contract will also indicate which mint run these tokens were minted in, where the first use of the mint_run_id will be mint run number 1, the second time MintNftClones is called with that mint_run_id will be mint run number 2, etc... If no mint_run_id is provided, the MintRunInfo will not include a mint_run. SNIP-722 adds the ability to optionally mint non-transferable tokens, which are NFTs that can never have a different owner than the address it was minted to.
 ``` csharp
-
+MintNftClones(
+	MsgMintNftClones msg,
+	Nullable<TxOptions> txOptions
+);
 ```
-### RegisterReceiveNft
-
+### [RegisterReceiveNft](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.RegisterReceiveNft.htm)
+A contract will use RegisterReceiveNft to notify the NFT contract that it implements ReceiveNft and possibly also BatchReceiveNft (see below). This enables the NFT contract to call the registered contract whenever it is Sent a token (or tokens). In order to comply with CW-721, ReceiveNft only informs the recipient contract that it has been sent a single token, and it only informs the recipient contract who the token's previous owner was, not who sent the token (which may be different addresses) despite calling the previous owner sender (see below). BatchReceiveNft, on the other hand, can be used to inform a contract that it was sent multiple tokens, and notifies the recipient of both, the token's previous owner and the sender. If a contract implements BatchReceiveNft, the NFT contract will always call BatchReceiveNft even if there is only one token being sent, in which case the token_ids array will only have one element.
 ``` csharp
-
+RegisterReceiveNft(
+	MsgRegisterReceiveNft msg,
+	Nullable<TxOptions> txOptions
+);
 ```
-### RemoveMinters
-
+### [RemoveMinters](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.RemoveMinters.htm)
+RemoveMinters will remove the provided addresses from the list of authorized minters. This can only be called by the admin address.
 ``` csharp
-
+RemoveMinters(
+	MsgRemoveMinters msg,
+	Nullable<TxOptions> txOptions
+);
 ```
-### Reveal
-
+### [Reveal](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.Reveal.htm)
+Reveal unwraps the sealed private metadata, irreversibly marking the token as unwrapped. If the unwrapped_metadata_is_private configuration value is true, the formerly sealed metadata will remain private, otherwise it will be made public.
 ``` csharp
-
+Reveal(
+	MsgReveal msg,
+	Nullable<TxOptions> txOptions
+);
 ```
-### Revoke
-
+### [Revoke](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.Revoke.htm)
+Revoke is used to revoke from an address the permission to transfer this single token. This can only be performed by the token's owner or, in compliance with CW-721, an address that has inventory-wide approval to transfer the owner's tokens (referred to as an operator later). However, one operator may not revoke transfer permission of even one single token away from another operator. Revoke is provided to maintain compliance with CW-721, but the owner can use SetWhitelistedApproval to accomplish the same thing if specifying a token_id and revoke_token AccessLevel for transfer.
 ``` csharp
-
+Revoke(
+	MsgRevoke msg,
+	Nullable<TxOptions> txOptions
+);
 ```
-### RevokeAll
-
+### [RevokeAll](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.RevokeAll.htm)
+RevokeAll is used to revoke all transfer approvals granted to an address. RevokeAll is provided to maintain compliance with CW-721, but the message sender can use SetWhitelistedApproval to accomplish the same thing by using none AccessLevel for transfer.
 ``` csharp
-
+RevokeAll(
+	MsgRevokeAll msg,
+	Nullable<TxOptions> txOptions
+);
 ```
-### RevokePermit
-
+### [RevokePermit](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.RevokePermit.htm)
+RevokePermit allows a user to disable the use of a permit for authenticated queries.
 ``` csharp
-
+RevokePermit(
+	MsgRevokePermit msg,
+	Nullable<TxOptions> txOptions
+);
 ```
-### SendNft
-
+### [SendNft](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.SendNft.htm)
+SendNft is used to transfer ownership of the token to the contract address, and then call the recipient's BatchReceiveNft (or ReceiveNft) if the recipient contract has registered its receiver interface with the NFT contract or if its ReceiverInfo is provided. If the recipient contract registered (or if the ReceiverInfo indicates) that it implements BatchReceiveNft, a BatchReceiveNft callback will be performed with only the single token ID in the token_ids array. While SendNft keeps the contract field name in order to maintain CW-721 compliance, Secret Network does not have the same limitations as Cosmos, and it is possible to use SendNft to transfer token ownership to a personal address(not a contract) or to a contract that does not implement any Receiver Interface. SendNft requires a valid token_id and the message sender must either be the owner or an address with valid transfer approval.If the recipient address is the same as the current owner, the contract will throw an error.If the token is transferred to a new owner, its single-token approvals will be cleared.If the BatchReceiveNft(or ReceiveNft) callback fails, the entire transaction will be reverted(even the transfer will not take place). This implementation will throw an error if trying to send a SNIP-722 non-transferable token.
 ``` csharp
-
+SendNft(
+	MsgSendNft msg,
+	Nullable<TxOptions> txOptions
+);
 ```
+### SetContractStatus
+### SetGlobalApproval
+### SetMetadata
+### SetMinters
+### SetRoyaltyInfo
+### SetViewingKey
+### SetWhitelistedApproval
+### TransferNft
