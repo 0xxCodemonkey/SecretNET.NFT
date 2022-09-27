@@ -28,7 +28,7 @@ public class Snip721Querier
     /// <param name="contractAddress">The contract address.</param>
     /// <param name="codeHash">CodeHash is (not really) optional and makes a call way faster.</param>
     /// <returns>SecretQueryContractResult&lt;GetContractInfoResponse&gt;.</returns>
-    public async Task<SecretQueryContractResult<GetContractInfoResponse>> GetTokenInfo(string contractAddress, string? codeHash = null)
+    public async Task<SecretQueryContractResult<GetContractInfoResponse>> GetContractInfo(string contractAddress, string? codeHash = null)
     {
         var request = new GetContractInfoRequest();
 
