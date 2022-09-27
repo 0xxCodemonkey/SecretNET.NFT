@@ -631,6 +631,7 @@
   <HelpKINode Title="GetContractConfigResponse_Result.SealedMetadataIsEnabled property" Url="html/P-SecretNET.NFT.GetContractConfigResponse_Result.SealedMetadataIsEnabled.htm" />
   <HelpKINode Title="GetContractConfigResponse_Result.TokenSupplyIsPublic property" Url="html/P-SecretNET.NFT.GetContractConfigResponse_Result.TokenSupplyIsPublic.htm" />
   <HelpKINode Title="GetContractConfigResponse_Result.UnwrappedMetadataIsPrivate property" Url="html/P-SecretNET.NFT.GetContractConfigResponse_Result.UnwrappedMetadataIsPrivate.htm" />
+  <HelpKINode Title="GetContractInfo method" Url="html/M-SecretNET.NFT.Snip721Querier.GetContractInfo.htm" />
   <HelpKINode Title="GetContractInfoRequest class" Url="html/AllMembers.T-SecretNET.NFT.GetContractInfoRequest.htm" />
   <HelpKINode Title="GetContractInfoRequest class" Url="html/T-SecretNET.NFT.GetContractInfoRequest.htm" />
   <HelpKINode Title="GetContractInfoRequest class">
@@ -1188,7 +1189,6 @@
   <HelpKINode Title="GetTokenApprovalsResponse_Result.PrivateMetadataIsPublicExpiration property" Url="html/P-SecretNET.NFT.GetTokenApprovalsResponse_Result.PrivateMetadataIsPublicExpiration.htm" />
   <HelpKINode Title="GetTokenApprovalsResponse_Result.PublicOwnershipExpiration property" Url="html/P-SecretNET.NFT.GetTokenApprovalsResponse_Result.PublicOwnershipExpiration.htm" />
   <HelpKINode Title="GetTokenApprovalsResponse_Result.TokenApprovals property" Url="html/P-SecretNET.NFT.GetTokenApprovalsResponse_Result.TokenApprovals.htm" />
-  <HelpKINode Title="GetTokenInfo method" Url="html/M-SecretNET.NFT.Snip721Querier.GetTokenInfo.htm" />
   <HelpKINode Title="GetTokens method" Url="html/M-SecretNET.NFT.Snip721Querier.GetTokens.htm" />
   <HelpKINode Title="GetTokensRequest class" Url="html/AllMembers.T-SecretNET.NFT.GetTokensRequest.htm" />
   <HelpKINode Title="GetTokensRequest class" Url="html/T-SecretNET.NFT.GetTokensRequest.htm" />
@@ -2892,6 +2892,7 @@
   <HelpKINode Title="Snip721Querier.GetApprovedForAll method" Url="html/M-SecretNET.NFT.Snip721Querier.GetApprovedForAll.htm" />
   <HelpKINode Title="Snip721Querier.GetBatchNftDossier method" Url="html/M-SecretNET.NFT.Snip721Querier.GetBatchNftDossier.htm" />
   <HelpKINode Title="Snip721Querier.GetContractConfig method" Url="html/M-SecretNET.NFT.Snip721Querier.GetContractConfig.htm" />
+  <HelpKINode Title="Snip721Querier.GetContractInfo method" Url="html/M-SecretNET.NFT.Snip721Querier.GetContractInfo.htm" />
   <HelpKINode Title="Snip721Querier.GetImplementsNonTransferableTokens method" Url="html/M-SecretNET.NFT.Snip721Querier.GetImplementsNonTransferableTokens.htm" />
   <HelpKINode Title="Snip721Querier.GetImplementsTokenSubtype method" Url="html/M-SecretNET.NFT.Snip721Querier.GetImplementsTokenSubtype.htm" />
   <HelpKINode Title="Snip721Querier.GetInventoryApprovals method" Url="html/M-SecretNET.NFT.Snip721Querier.GetInventoryApprovals.htm" />
@@ -2907,7 +2908,6 @@
   <HelpKINode Title="Snip721Querier.GetRegisteredCodeHash method" Url="html/M-SecretNET.NFT.Snip721Querier.GetRegisteredCodeHash.htm" />
   <HelpKINode Title="Snip721Querier.GetRoyaltyInfo method" Url="html/M-SecretNET.NFT.Snip721Querier.GetRoyaltyInfo.htm" />
   <HelpKINode Title="Snip721Querier.GetTokenApprovals method" Url="html/M-SecretNET.NFT.Snip721Querier.GetTokenApprovals.htm" />
-  <HelpKINode Title="Snip721Querier.GetTokenInfo method" Url="html/M-SecretNET.NFT.Snip721Querier.GetTokenInfo.htm" />
   <HelpKINode Title="Snip721Querier.GetTokens method" Url="html/M-SecretNET.NFT.Snip721Querier.GetTokens.htm" />
   <HelpKINode Title="Snip721Querier.GetTransactionHistory method" Url="html/M-SecretNET.NFT.Snip721Querier.GetTransactionHistory.htm" />
   <HelpKINode Title="Snip721Querier.GetVerifyTransferApproval method" Url="html/M-SecretNET.NFT.Snip721Querier.GetVerifyTransferApproval.htm" />
