@@ -8,6 +8,8 @@ This allows [unique use cases](https://docs.scrt.network/secret-network-document
   <img src="./resources/Secret.NET_banner.png" type="image/png" width="100%" />
 </p>
 
+SecretNET.NFT provides typed and documented objects and methods that simplify interaction with a SNIP721 smart contract.
+
 - Implementation => [GitHub - baedrik/snip721-reference-impl](https://github.com/baedrik/snip721-reference-impl) 
 - Implementation of the [SNIP-721 specification](https://github.com/SecretFoundation/SNIPs/blob/master/SNIP-721.md) and [SNIP-722 specification](https://github.com/baedrik/snip-722-spec/blob/master/SNIP-722.md).
 - See also the [SNIP721 documentation on Secret Network](https://docs.scrt.network/secret-network-documentation/development/snips/snip-721-private-non-fungible-tokens-nfts).
@@ -37,7 +39,7 @@ All transactions can also be simulated via ```Tx.Simulate```.
 
 ![](resources/VS_IntelliSense.png)
 ## Instantiating a SNIP721 Client
-To instantiate a SecretNET.SNIP20 client you just have to pass it a SecretNET client instance:
+To instantiate a SecretNET.SNIP20 client you just have to pass it a [SecretNET client instance](https://github.com/0xxCodemonkey/SecretNET#usage-examples):
 ```  csharp
 var snip721Client =  new SecretNET.NFT.Snip721Client(secretNetworkClient);
 ```
@@ -70,49 +72,267 @@ var transferResult = await snip721Client.Tx.TransferNft(
 ```
 
 # Implemented methods
+- [Queries](#queries)
+  - [GetAllNftInfo](#getallnftinfo)
+  - [GetAllTokens](#getalltokens)
+  - [GetApprovedForAll](#getapprovedforall)
+  - [GetBatchNftDossier](#getbatchnftdossier)
+  - [GetContractConfig](#getcontractconfig)
+  - [GetImplementsTokenSubtype](#getimplementstokensubtype)
+  - [GetInventoryApprovals](#getinventoryapprovals)
+  - [GetIsTransferable](#getistransferable)
+  - [GetIsUnwrapped](#getisunwrapped)
+  - [GetNftDossier](#getnftdossier)
+  - [GetNftInfo](#getnftinfo)
+  - [GetNumTokens](#getnumtokens)
+  - [GetNumTokensOfOwner](#getnumtokensofowner)
+  - [GetOwnerOf](#getownerof)
+  - [GetPrivateMetadata](#getprivatemetadata)
+  - [GetRegisteredCodeHash](#getregisteredcodehash)
+  - [GetRoyaltyInfo](#getroyaltyinfo)
+  - [GetTokenApprovals](#gettokenapprovals)
+  - [GetTokenInfo](#gettokeninfo)
+  - [GetTokens](#gettokens)
+  - [GetTransactionHistory](#gettransactionhistory)
+  - [GetVerifyTransferApproval](#getverifytransferapproval)
+- [Transactions](#transactions)
+  - [AddMinter](#addminter)
+  - [Approve](#approve)
+  - [ApproveAll](#approveall)
+  - [BatchBurnNft](#batchburnnft)
+  - [BatchMintNft](#batchmintnft)
+  - [BatchSendNft](#batchsendnft)
+  - [BatchTransferNft](#batchtransfernft)
+  - [BurnNft](#burnnft)
+  - [ChangeAdmin](#changeadmin)
+  - [CreateViewingKey](#createviewingkey)
+  - [Instantiate (new contract)](#instantiate-new-contract)
+  - [MakeOwnershipPrivate](#makeownershipprivate)
+  - [MintNft](#mintnft)
+  - [MintNftClones](#mintnftclones)
+  - [RegisterReceiveNft](#registerreceivenft)
+  - [RemoveMinters](#removeminters)
+  - [Reveal](#reveal)
+  - [Revoke](#revoke)
+  - [RevokeAll](#revokeall)
+  - [RevokePermit](#revokepermit)
+  - [SendNft](#sendnft)
+
 ## Queries
-- GetAllNftInfo
-- GetAllTokens
-- GetApprovedForAll
-- GetBatchNftDossier
-- GetContractConfig
-- GetImplementsTokenSubtype
-- GetInventoryApprovals
-- GetIsTransferable
-- GetIsUnwrapped
-- GetNftDossier
-- GetNftInfo
-- GetNumTokens
-- GetNumTokensOfOwner
-- GetOwnerOf
-- GetPrivateMetadata
-- GetRegisteredCodeHash
-- GetRoyaltyInfo
-- GetTokenApprovals
-- GetTokenInfo
-- GetTokens
-- GetTransactionHistory
-- GetVerifyTransferApproval
+### GetAllNftInfo
+
+``` csharp
+
+```
+### GetAllTokens
+
+``` csharp
+
+```
+### GetApprovedForAll
+
+``` csharp
+
+```
+### GetBatchNftDossier
+
+``` csharp
+
+```
+### GetContractConfig
+
+``` csharp
+
+```
+### GetImplementsTokenSubtype
+
+``` csharp
+
+```
+### GetInventoryApprovals
+
+``` csharp
+
+```
+### GetIsTransferable
+
+``` csharp
+
+```
+### GetIsUnwrapped
+
+``` csharp
+
+```
+### GetNftDossier
+
+``` csharp
+
+```
+### GetNftInfo
+
+``` csharp
+
+```
+### GetNumTokens
+
+``` csharp
+
+```
+### GetNumTokensOfOwner
+
+``` csharp
+
+```
+### GetOwnerOf
+
+``` csharp
+
+```
+### GetPrivateMetadata
+
+``` csharp
+
+```
+### GetRegisteredCodeHash
+
+``` csharp
+
+```
+### GetRoyaltyInfo
+
+``` csharp
+
+```
+### GetTokenApprovals
+
+``` csharp
+
+```
+### GetTokenInfo
+
+``` csharp
+
+```
+### GetTokens
+
+``` csharp
+
+```
+### GetTransactionHistory
+
+``` csharp
+
+```
+### GetVerifyTransferApproval
+
+``` csharp
+
+```
 
 ## Transactions
-- AddMinter
-- Approve
-- ApproveAll
-- BatchBurnNft
-- BatchMintNft
-- BatchSendNft
-- BatchTransferNft
-- BurnNft
-- ChangeAdmin
-- CreateViewingKey
-- Instantiate (new contract)
-- MakeOwnershipPrivate
-- MintNft
-- MintNftClones
-- RegisterReceiveNft
-- RemoveMinters
-- Reveal
-- Revoke
-- RevokeAll
-- RevokePermit
-- SendNft
+### AddMinter
+
+``` csharp
+
+```
+### Approve
+
+``` csharp
+
+```
+### ApproveAll
+
+``` csharp
+
+```
+### BatchBurnNft
+
+``` csharp
+
+```
+### BatchMintNft
+
+``` csharp
+
+```
+### BatchSendNft
+
+``` csharp
+
+```
+### BatchTransferNft
+
+``` csharp
+
+```
+### BurnNft
+
+``` csharp
+
+```
+### ChangeAdmin
+
+``` csharp
+
+```
+### CreateViewingKey
+
+``` csharp
+
+```
+### Instantiate (new contract)
+
+``` csharp
+
+```
+### MakeOwnershipPrivate
+
+``` csharp
+
+```
+### MintNft
+
+``` csharp
+
+```
+### MintNftClones
+
+``` csharp
+
+```
+### RegisterReceiveNft
+
+``` csharp
+
+```
+### RemoveMinters
+
+``` csharp
+
+```
+### Reveal
+
+``` csharp
+
+```
+### Revoke
+
+``` csharp
+
+```
+### RevokeAll
+
+``` csharp
+
+```
+### RevokePermit
+
+``` csharp
+
+```
+### SendNft
+
+``` csharp
+
+```
