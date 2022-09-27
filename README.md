@@ -22,7 +22,6 @@ Of course, the concept can be used for any kind of smart contracts in general.
 You can find the **full API-documentation** here => https://0xxcodemonkey.github.io/SecretNET.NFT
 
 # Table of Contents
-- [Table of Contents](#table-of-contents)
 - [Implementation](#implementation)
   - [Instantiating a SNIP721 Client](#instantiating-a-snip721-client)
   - [Usage](#usage)
