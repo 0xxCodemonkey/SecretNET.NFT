@@ -27,11 +27,11 @@ You can find the **full API-documentation** here => https://0xxcodemonkey.github
   - [Instantiating a SNIP721 Client](#instantiating-a-snip721-client)
   - [Usage](#usage)
 - [Implemented methods](#implemented-methods)
-  - [Queries](#queries)
-  - [Transactions](#transactions)
+  - [Queries](#queries-snip721clientquery)
+  - [Transactions](#transactions-snip721clienttx)
 
 # Implementation
-The structure of SecretNET.NFT is the same as the SecretNET client and transactions are accessible via ```Tx``` property and queries via ```Query``` property.
+The structure of SecretNET.NFT is the same as the SecretNET client and transactions are accessible via `Tx` property and queries via `Query` property.
 
 All transactions can also be simulated via ```Tx.Simulate```.
 
@@ -72,7 +72,7 @@ var transferResult = await snip721Client.Tx.TransferNft(
 ```
 
 # Implemented methods
-- [Queries](#queries)
+- [Queries](#queries-snip721clientquery)
   - [GetAllNftInfo](#getallnftinfo)
   - [GetAllTokens](#getalltokens)
   - [GetApprovedForAll](#getapprovedforall)
@@ -95,7 +95,7 @@ var transferResult = await snip721Client.Tx.TransferNft(
   - [GetTokens](#gettokens)
   - [GetTransactionHistory](#gettransactionhistory)
   - [GetVerifyTransferApproval](#getverifytransferapproval)
-- [Transactions](#transactions)
+- [Transactions](#transactions-snip721clienttx)
   - [AddMinter](#addminter)
   - [Approve](#approve)
   - [ApproveAll](#approveall)
@@ -118,7 +118,7 @@ var transferResult = await snip721Client.Tx.TransferNft(
   - [RevokePermit](#revokepermit)
   - [SendNft](#sendnft)
 
-## Queries
+## Queries (`Snip721Client.Query`)
 ### GetAllNftInfo
 
 ``` csharp
@@ -230,7 +230,7 @@ var transferResult = await snip721Client.Tx.TransferNft(
 
 ```
 
-## Transactions
+## Transactions (`Snip721Client.Tx`)
 ### AddMinter
 
 ``` csharp
