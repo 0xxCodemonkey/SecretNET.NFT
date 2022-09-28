@@ -395,7 +395,7 @@ AddMinter(
 );
 ```
 ### [Approve](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.Approve.htm)
-Approve is used to grant an address permission to transfer a single token. This can only be performed by the token's owner or, in compliance with CW-721, an address that has inventory-wide approval to transfer the owner's tokens. Approve is provided to maintain compliance with CW-721, but the owner can use SetWhitelistedApproval to accomplish the same thing if specifying a token_id and approve_token AccessLevel for transfer.
+Approve is used to grant an address permission to transfer a single token. This can only be performed by the token's owner or, in compliance with CW-721, an address that has inventory-wide approval to transfer the owner's tokens. Approve is provided to maintain compliance with CW-721, but the owner can use SetWhitelistedApproval to accomplish the same thing if specifying a `token_id` and `approve_token` AccessLevel for `transfer`.
 ``` csharp
 Approve(
 	MsgApprove msg,
@@ -403,7 +403,7 @@ Approve(
 );
 ```
 ### [ApproveAll](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.ApproveAll.htm)
-ApproveAll is used to grant an address permission to transfer all the tokens in the message sender's inventory. This will include the ability to transfer any tokens the sender acquires after granting this inventory-wide approval. This also gives the address the ability to grant another address the approval to transfer a single token. ApproveAll is provided to maintain compliance with CW-721, but the message sender can use SetWhitelistedApproval to accomplish the same thing by using all AccessLevel for transfer.
+ApproveAll is used to grant an address permission to transfer all the tokens in the message sender's inventory. This will include the ability to transfer any tokens the sender acquires after granting this inventory-wide approval. This also gives the address the ability to grant another address the approval to transfer a single token. ApproveAll is provided to maintain compliance with CW-721, but the message sender can use SetWhitelistedApproval to accomplish the same thing by using `all` AccessLevel for `transfer`.
 ``` csharp
 ApproveAll(
 	MsgApproveAll msg,
@@ -419,7 +419,9 @@ BatchBurnNft(
 );
 ```
 ### [BatchMintNft](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.BatchMintNft.htm)
-BatchMintNft mints a list of tokens. Only an authorized minting address my execute BatchMintNft. [SNIP-722](https://github.com/baedrik/snip-722-spec/blob/master/SNIP-722.md) adds the ability to optionally mint non-transferable tokens, which are NFTs that can never have a different owner than the address it was minted to.
+BatchMintNft mints a list of tokens. Only an authorized minting address my execute BatchMintNft. 
+
+[SNIP-722](https://github.com/baedrik/snip-722-spec/blob/master/SNIP-722.md) adds the ability to optionally mint non-transferable tokens, which are NFTs that can never have a different owner than the address it was minted to.
 ``` csharp
 BatchMintNft(
 	MsgBatchMintNft msg,
@@ -475,7 +477,7 @@ Instantiate(
 );
 ```
 ### [MakeOwnershipPrivate](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.MakeOwnershipPrivate.htm)
-MakeOwnershipPrivate is used when the token contract was instantiated with the public_owner configuration value set to true. It allows an address to make all of its tokens have private ownership by default. The owner may still use SetGlobalApproval or SetWhitelistedApproval to make ownership public as desired.
+MakeOwnershipPrivate is used when the token contract was instantiated with the `public_owner` configuration value set to true. It allows an address to make all of its tokens have private ownership by default. The owner may still use SetGlobalApproval or SetWhitelistedApproval to make ownership public as desired.
 ``` csharp
 MakeOwnershipPrivate(
 	MsgMakeOwnershipPrivate msg,
@@ -493,7 +495,9 @@ MintNft(
 );
 ```
 ### [MintNftClones](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.MintNftClones.htm)
-MintNftClones mints copies of an NFT, giving each one a MintRunInfo that indicates its serial number and the number of identical NFTs minted with it. If the optional mint_run_id is provided, the contract will also indicate which mint run these tokens were minted in, where the first use of the mint_run_id will be mint run number 1, the second time MintNftClones is called with that mint_run_id will be mint run number 2, etc... If no mint_run_id is provided, the MintRunInfo will not include a mint_run. [SNIP-722](https://github.com/baedrik/snip-722-spec/blob/master/SNIP-722.md) adds the ability to optionally mint non-transferable tokens, which are NFTs that can never have a different owner than the address it was minted to.
+MintNftClones mints copies of an NFT, giving each one a MintRunInfo that indicates its serial number and the number of identical NFTs minted with it. If the optional `mint_run_id` is provided, the contract will also indicate which mint run these tokens were minted in, where the first use of the `mint_run_id` will be mint run number 1, the second time MintNftClones is called with that mint_run_id will be mint run number 2, etc... If no `mint_run_id` is provided, the MintRunInfo will not include a `mint_run`. 
+
+[SNIP-722](https://github.com/baedrik/snip-722-spec/blob/master/SNIP-722.md) adds the ability to optionally mint non-transferable tokens, which are NFTs that can never have a different owner than the address it was minted to.
 ``` csharp
 MintNftClones(
 	MsgMintNftClones msg,
@@ -517,7 +521,7 @@ RemoveMinters(
 );
 ```
 ### [Reveal](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.Reveal.htm)
-Reveal unwraps the sealed private metadata, irreversibly marking the token as unwrapped. If the unwrapped_metadata_is_private configuration value is true, the formerly sealed metadata will remain private, otherwise it will be made public.
+Reveal unwraps the sealed private metadata, irreversibly marking the token as unwrapped. If the `unwrapped_metadata_is_private` configuration value is true, the formerly sealed metadata will remain private, otherwise it will be made public.
 ``` csharp
 Reveal(
 	MsgReveal msg,
@@ -525,7 +529,7 @@ Reveal(
 );
 ```
 ### [Revoke](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.Revoke.htm)
-Revoke is used to revoke from an address the permission to transfer this single token. This can only be performed by the token's owner or, in compliance with CW-721, an address that has inventory-wide approval to transfer the owner's tokens (referred to as an operator later). However, one operator may not revoke transfer permission of even one single token away from another operator. Revoke is provided to maintain compliance with CW-721, but the owner can use SetWhitelistedApproval to accomplish the same thing if specifying a token_id and revoke_token AccessLevel for transfer.
+Revoke is used to revoke from an address the permission to transfer this single token. This can only be performed by the token's owner or, in compliance with CW-721, an address that has inventory-wide approval to transfer the owner's tokens (referred to as an operator later). However, one operator may not revoke transfer permission of even one single token away from another operator. Revoke is provided to maintain compliance with CW-721, but the owner can use [SetWhitelistedApproval](#setwhitelistedapproval) to accomplish the same thing if specifying a `token_id` and `revoke_token` [AccessLevel](https://0xxcodemonkey.github.io/SecretNET.NFT/html/T-SecretNET.NFT.AccessLevel.htm) for `transfer`.
 ``` csharp
 Revoke(
 	MsgRevoke msg,
@@ -533,7 +537,7 @@ Revoke(
 );
 ```
 ### [RevokeAll](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.RevokeAll.htm)
-RevokeAll is used to revoke all transfer approvals granted to an address. RevokeAll is provided to maintain compliance with CW-721, but the message sender can use SetWhitelistedApproval to accomplish the same thing by using none AccessLevel for transfer.
+RevokeAll is used to revoke all transfer approvals granted to an address. RevokeAll is provided to maintain compliance with CW-721, but the message sender can use SetWhitelistedApproval to accomplish the same thing by using `none` [AccessLevel](https://0xxcodemonkey.github.io/SecretNET.NFT/html/T-SecretNET.NFT.AccessLevel.htm) for `transfer`.
 ``` csharp
 RevokeAll(
 	MsgRevokeAll msg,
@@ -589,7 +593,9 @@ SetMinters(
 );
 ```
 ### [SetRoyaltyInfo](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.SetRoyaltyInfo.htm)
-If a token_id is supplied, SetRoyaltyInfo will update the specified token's RoyaltyInfo to the input. If no RoyaltyInfo is provided, it will delete the RoyaltyInfo and replace it with the contract's default RoyaltyInfo (if there is one). If no token_id is provided, SetRoyaltyInfo will update the contract's default RoyaltyInfo to the input, or delete it if no RoyaltyInfo is provided. Only an authorized minter may update the contract's default RoyaltyInfo. Only a token's creator may update its RoyaltyInfo, and only if they are also the current owner. This implementation will throw an error if trying to set the royalty of a [SNIP-722](https://github.com/baedrik/snip-722-spec/blob/master/SNIP-722.md) non-transferable token, because they can never be transferred as part of a sale.
+If a token_id is supplied, SetRoyaltyInfo will update the specified token's RoyaltyInfo to the input. If no RoyaltyInfo is provided, it will delete the RoyaltyInfo and replace it with the contract's default RoyaltyInfo (if there is one). If no `token_id` is provided, SetRoyaltyInfo will update the contract's default RoyaltyInfo to the input, or delete it if no RoyaltyInfo is provided.<br /> Only an authorized minter may update the contract's default RoyaltyInfo.<br /> Only a token's creator may update its RoyaltyInfo, and only if they are also the current owner. 
+
+This implementation will throw an error if trying to set the royalty of a [SNIP-722](https://github.com/baedrik/snip-722-spec/blob/master/SNIP-722.md) non-transferable token, because they can never be transferred as part of a sale.
 ``` csharp
 SetRoyaltyInfo(
 	MsgSetRoyaltyInfo msg,
@@ -613,7 +619,9 @@ SetWhitelistedApproval(
 )
 ```
 ### [TransferNft](https://0xxcodemonkey.github.io/SecretNET.NFT/html/Overload-SecretNET.NFT.Snip721Tx.TransferNft.htm)
-TransferNft is used to transfer ownership of the token to the recipient address. This requires a valid token_id and the message sender must either be the owner or an address with valid transfer approval. If the recipient address is the same as the current owner, the contract will throw an error. If the token is transferred to a new owner, its single-token approvals will be cleared. This implementation will throw an error if trying to transfer a [SNIP-722](https://github.com/baedrik/snip-722-spec/blob/master/SNIP-722.md) non-transferable token.
+TransferNft is used to transfer ownership of the token to the `recipient` address. This requires a valid `token_id` and the message sender must either be the owner or an address with valid transfer approval. If the `recipient` address is the same as the current owner, the contract will throw an error. If the token is transferred to a new owner, its single-token approvals will be cleared. 
+
+This implementation will throw an error if trying to transfer a [SNIP-722](https://github.com/baedrik/snip-722-spec/blob/master/SNIP-722.md) non-transferable token.
 ``` csharp
 TransferNft(
 	MsgTransferNft msg,
