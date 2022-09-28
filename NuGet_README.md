@@ -4,9 +4,7 @@
 **The [Secret Network blockchain](https://scrt.network/) (L1 / Cosmos), is the first privacy smart contract blockchain that processes and stores data on-chain in encrypted form (via Intel SGX).** 
 This allows [unique use cases](https://docs.scrt.network/secret-network-documentation/secret-network-overview/use-cases) like **Secret NFTs** where you can store public and private data e.g., Encryption Keys, passwords or other secrets.
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/0xxCodemonkey/SecretNET/main/resources/Secret.NET_banner.png" type="image/png" width="100%" />
-</p>
+![ ](https://raw.githubusercontent.com/0xxCodemonkey/SecretNET/main/resources/Secret.NET_banner.png)
 
 **SecretNET.NFT** provides typed and documented objects and methods that simplify interaction with a SNIP721 smart contract.
 
