@@ -483,7 +483,9 @@ MakeOwnershipPrivate(
 );
 ```
 ### [MintNft](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.MintNft.htm)
-MintNft mints a single token. Only an authorized minting address my execute MintNft. SNIP-722 adds the ability to optionally mint non-transferable tokens, which are NFTs that can never have a different owner than the address it was minted to.
+MintNft mints a single token. Only an authorized minting address my execute MintNft. 
+
+SNIP-722 adds the ability to optionally mint non-transferable tokens, which are NFTs that can never have a different owner than the address it was minted to.
 ``` csharp
 MintNft(
 	MsgMintNft msg,
