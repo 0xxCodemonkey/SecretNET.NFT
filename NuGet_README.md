@@ -7,10 +7,10 @@ This allows [unique use cases](https://docs.scrt.network/secret-network-document
 ![ ](https://raw.githubusercontent.com/0xxCodemonkey/SecretNET/main/resources/Secret.NET_banner.png)
 
 **SecretNET.NFT** provides typed and documented objects and methods that simplify interaction with a SNIP721 smart contract.
-
 - Implementation => [GitHub - baedrik/snip721-reference-impl](https://github.com/baedrik/snip721-reference-impl) 
 - Implementation of the [SNIP-721 specification](https://github.com/SecretFoundation/SNIPs/blob/master/SNIP-721.md) and [[SNIP-722](https://github.com/baedrik/snip-722-spec/blob/master/SNIP-722.md) specification](https://github.com/baedrik/[SNIP-722](https://github.com/baedrik/snip-722-spec/blob/master/SNIP-722.md)-spec/blob/master/[SNIP-722](https://github.com/baedrik/snip-722-spec/blob/master/SNIP-722.md).md).
 - See also the [SNIP721 documentation on Secret Network](https://docs.scrt.network/secret-network-documentation/development/snips/snip-721-private-non-fungible-tokens-nfts).
+
 
 :white_check_mark: **This repository is explicitly intended to serve as a template for custom SNIP721 token contracts.** 
 This makes it easy to create your own customized clients for your own customized contracts.
