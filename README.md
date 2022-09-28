@@ -118,7 +118,15 @@ var transferResult = await snip721Client.Tx.TransferNft(
   - [RevokeAll](#revokeall)
   - [RevokePermit](#revokepermit)
   - [SendNft](#sendnft)
-
+  - [SetContractStatus](#setcontractstatus)
+  - [SetGlobalApproval](#setglobalapproval)
+  - [SetMetadata](#setmetadata)
+  - [SetMinters](#setminters)
+  - [SetRoyaltyInfo](#setroyaltyinfo)
+  - [SetViewingKey](#setviewingkey)
+  - [SetWhitelistedApproval](#setwhitelistedapproval)
+  - [TransferNft](#transfernft)
+  
 ## Queries (`Snip721Client.Query`)
 ### [GetAllNftInfo](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Querier.GetAllNftInfo.htm)
 AllNftInfo displays the result of both OwnerOf and NftInfo in a single query. This is provided for CW-721 compliance, but for more complete information about a token, use NftDossier, which will include private metadata and view_owner and view_private_metadata approvals if the querier is permitted to view this information.
@@ -546,11 +554,77 @@ SendNft(
 	Nullable<TxOptions> txOptions
 );
 ```
-### SetContractStatus
-### SetGlobalApproval
-### SetMetadata
-### SetMinters
-### SetRoyaltyInfo
-### SetViewingKey
-### SetWhitelistedApproval
-### TransferNft
+### [SetContractStatus](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.SetContractStatus.htm)
+SetContractStatus allows the contract admin to define which messages the contract will execute. This can only be called by the admin address.
+``` csharp
+SetContractStatus(
+	MsgSetContractStatus msg,
+	Nullable<TxOptions> txOptions
+);
+```
+### [SetGlobalApproval](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.SetGlobalApproval.htm)
+The owner of a token can use SetGlobalApproval to make ownership and/or private metadata viewable by everyone. This can be set for a single token or for an owner's entire inventory of tokens by choosing the appropriate AccessLevel. SetGlobalApproval can also be used to revoke any global approval previously granted.
+``` csharp
+SetGlobalApproval(
+	MsgSetGlobalApproval msg,
+	Nullable<TxOptions> txOptions
+);
+```
+### [SetMetadata](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.SetMetadata.htm)
+SetMetadata will set the public and/or private metadata to the corresponding input if the message sender is either the token owner or an approved minter and they have been given this power by the configuration value chosen during instantiation. The private metadata of a sealed token may not be altered until after it has been unwrapped.
+``` csharp
+SetMetadata(
+	MsgSetMetadata msg,
+	Nullable<TxOptions> txOptions
+);
+```
+### [SetMinters](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.SetMinters.htm)
+SetMinters will precisely define the list of authorized minters. This can only be called by the admin address.
+``` csharp
+SetMinters(
+	MsgSetMinters msg,
+	Nullable<TxOptions> txOptions
+);
+```
+### [SetRoyaltyInfo](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.SetRoyaltyInfo.htm)
+If a token_id is supplied, SetRoyaltyInfo will update the specified token's RoyaltyInfo to the input. If no RoyaltyInfo is provided, it will delete the RoyaltyInfo and replace it with the contract's default RoyaltyInfo (if there is one). If no token_id is provided, SetRoyaltyInfo will update the contract's default RoyaltyInfo to the input, or delete it if no RoyaltyInfo is provided. Only an authorized minter may update the contract's default RoyaltyInfo. Only a token's creator may update its RoyaltyInfo, and only if they are also the current owner. This implementation will throw an error if trying to set the royalty of a SNIP-722 non-transferable token, because they can never be transferred as part of a sale.
+``` csharp
+SetRoyaltyInfo(
+	MsgSetRoyaltyInfo msg,
+	Nullable<TxOptions> txOptions
+);
+```
+### [SetViewingKey](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.SetViewingKey.htm)
+SetViewingKey is used to set the viewing key to a predefined string. It will replace any key that currently exists. It would be best for users to call CreateViewingKey to ensure a strong key, but this function is provided so that contracts can also utilize viewing keys.
+``` csharp
+SetViewingKey(
+	MsgSetViewingKey msg,
+	Nullable<TxOptions> txOptions
+);
+```
+### [SetWhitelistedApproval](https://0xxcodemonkey.github.io/SecretNET.NFT/html/M-SecretNET.NFT.Snip721Tx.SetWhitelistedApproval.htm)
+The owner of a token can use SetWhitelistedApproval to grant an address permission to view ownership, view private metadata, and/or to transfer a single token or every token in the owner's inventory. SetWhitelistedApproval can also be used to revoke any approval previously granted to the address.
+``` csharp
+SetWhitelistedApproval(
+	MsgSetWhitelistedApproval msg,
+	Nullable<TxOptions> txOptions
+)
+```
+### [TransferNft](https://0xxcodemonkey.github.io/SecretNET.NFT/html/Overload-SecretNET.NFT.Snip721Tx.TransferNft.htm)
+TransferNft is used to transfer ownership of the token to the recipient address. This requires a valid token_id and the message sender must either be the owner or an address with valid transfer approval. If the recipient address is the same as the current owner, the contract will throw an error. If the token is transferred to a new owner, its single-token approvals will be cleared. This implementation will throw an error if trying to transfer a SNIP-722 non-transferable token.
+``` csharp
+TransferNft(
+	MsgTransferNft msg,
+	Nullable<TxOptions> txOptions
+);
+
+TransferNft(
+	string contractAddress,
+	string recipient,
+	string tokenId,
+	string memo,
+	string padding,
+	string codeHash,
+	Nullable<TxOptions> txOptions
+);
+```
