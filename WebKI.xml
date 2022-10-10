@@ -2629,9 +2629,11 @@
   <HelpKINode Title="SendNftRequest class">
     <HelpKINode Title="about SendNftRequest class" Url="html/T-SecretNET.NFT.SendNftRequest.htm" />
     <HelpKINode Title="all members" Url="html/AllMembers.T-SecretNET.NFT.SendNftRequest.htm" />
+    <HelpKINode Title="constructor" Url="html/M-SecretNET.NFT.SendNftRequest.-ctor.htm" />
     <HelpKINode Title="properties" Url="html/Properties.T-SecretNET.NFT.SendNftRequest.htm" />
   </HelpKINode>
   <HelpKINode Title="SendNftRequest.Payload property" Url="html/P-SecretNET.NFT.SendNftRequest.Payload.htm" />
+  <HelpKINode Title="SendNftRequest.SendNftRequest constructor" Url="html/M-SecretNET.NFT.SendNftRequest.-ctor.htm" />
   <HelpKINode Title="SendNftRequest_Payload class" Url="html/AllMembers.T-SecretNET.NFT.SendNftRequest_Payload.htm" />
   <HelpKINode Title="SendNftRequest_Payload class" Url="html/T-SecretNET.NFT.SendNftRequest_Payload.htm" />
   <HelpKINode Title="SendNftRequest_Payload class">
