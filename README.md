@@ -1,3 +1,10 @@
+<!--  ![Nuget](https://img.shields.io/nuget/v/SecretNET.NFT?label=stable) ![GitHub](https://img.shields.io/github/license/0xxCodemonkey/SecretNET.NFT) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/0xxCodemonkey/SecretNET.NFT/Publish%20Packages?label=checks) -->
+![GitHub](https://img.shields.io/github/license/0xxCodemonkey/SecretNET.NFT) ![Nuget](https://img.shields.io/nuget/dt/SecretNET.NFT?color=%239100ff) [![NuGet version (SecretNET.NFT)](https://img.shields.io/nuget/v/SecretNET.NFT.svg?style=flat-square)](https://www.nuget.org/packages/SecretNET.NFT/)
+
+*Status: (Project is in active development)*
+<br/><br/>
+
+
 # Secret.NET NFT (SNIP721) / Secret NFT
 **Secret.NET NFT** is a layer on top of the [**Secret.NET client**](https://github.com/0xxCodemonkey/SecretNET) which supports all methods of the reference implementation of the SNIP721 contract.
 
