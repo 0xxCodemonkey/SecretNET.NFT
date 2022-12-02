@@ -28,6 +28,10 @@ Of course, the concept can be used for any kind of smart contracts in general.
 ## Full API-documentation
 You can find the **full API-documentation** here => https://0xxcodemonkey.github.io/SecretNET.NFT
 
+More [code samples](https://docs.scrt.network/secret-network-documentation/development/tools-and-libraries/secret-net/snippets) can also be found on the official [Secret Network Developer documentation](https://docs.scrt.network/secret-network-documentation/).
+
+You can also ask questions in the official [Secret Network Discord](https://discord.gg/secret-network-360051864110235648) in the channel **#secret-net**.
+
 # Table of Contents
 - [Implementation](#implementation)
   - [Instantiating a SNIP721 Client](#instantiating-a-snip721-client)
